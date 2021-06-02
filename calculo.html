@@ -17,21 +17,40 @@
 
 <body>
     <h1>Somando Valores</h1>
-    <input type="number" name="numero1" id="numero1">
-    <input type="number" name="numero2" id="numero2">
+    <input type="number" name="numero1" id="numero1">    +    <input type="number" name="numero2" id="numero2">
     <input type="button" value="Somar" onclick="conta()">
-    <divid id="resposta">Resultado</div>
-        <script>
-            function conta() {
-                let VariavelNumero1 = window.document.getElementById("numero1")
-                let VariavelNumero2 = window.document.getElementById("numero2")
-                let Conta = window.document.getElementById("resposta")
-                let namber1 = Number(VariavelNumero1.value)
-                let namber2 = Number(VariavelNumero2.value)
-                const soma = namber1 + namber2;
-                Conta.innerHTML = `A soma entre ${namber1} e ${namber2} é igual a ${soma} <br/>`
+    <div id="resposta"></div>
+    <script>
+        function conta() {
+            let VariavelNumero1 = window.document.getElementById("numero1")
+            let VariavelNumero2 = window.document.getElementById("numero2")
+            let Conta = window.document.getElementById("resposta")
+            let namber1 = Number(VariavelNumero1.value)
+            let namber2 = Number(VariavelNumero2.value)
+            const soma = namber1 + namber2;
+            Conta.innerHTML += `A soma entre ${namber1} e ${namber2} é igual a ${soma} <br/>`
+        }
+    </script>
+    <h1>Checar se foi multado!</h1>
+    Velocidade do carro: <input type="number" name="velo" id="velo">Km/h
+    <input type="button" value="verificar" onclick="calcular()">
+    <div id="res"></div>
+<div id="resultado"></div>
+    <script>
+        function calcular() {
+            let velo = window.document.getElementById('velo');
+            const resultado = document.getElementById('resultado');
+            let res = window.document.querySelector('div#res');
+            let final = Number(velo.value);
+            res.innerHTML = `Sua velocidade foi de ${final}<br />`
+            if (final <= 100) {
+                resultado.innerHTML = `Você não ultrapassou os limites de velocidade<br />`
             }
-        </script>
+            else if (final > 100) {
+                resultado.innerHTML = (`Você ultrapassou o limite de velocidade!<br /><strong>VOCÊ FOI MULTADO</strong>`);
+            }
+        }
+    </script>
 </body>
 
 </html>
