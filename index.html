@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculo</title>
+    <style>
+        body {
+            color: white;
+            background: tomato;
+            font: normal 20pt Arial;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Somando Valores</h1>
+    <input type="number" name="numero1" id="numero1">
+    <input type="number" name="numero2" id="numero2">
+    <input type="button" value="Somar" onclick="conta()">
+    <divid id="resposta">Resultado</div>
+        <script>
+            function conta() {
+                let VariavelNumero1 = window.document.getElementById("numero1")
+                let VariavelNumero2 = window.document.getElementById("numero2")
+                let Conta = window.document.getElementById("resposta")
+                let namber1 = Number(VariavelNumero1.value)
+                let namber2 = Number(VariavelNumero2.value)
+                const soma = namber1 + namber2;
+                Conta.innerHTML = `A soma entre ${namber1} e ${namber2} é igual a ${soma} <br/>`
+            }
+        </script>
+</body>
+
+</html>
