@@ -37,13 +37,13 @@ switch (dia.getDay()) {
 
 function conta() {
     const variavelNumero1 = window.document.getElementById("numero1")
-    let VariavelNumero2 = window.document.getElementById("numero2")
-    let namber1 = Number(VariavelNumero1.value)
-    let namber2 = +(VariavelNumero2.value)
+    const variavelNumero2 = window.document.getElementById("numero2")
+    const namber1 = Number(variavelNumero1.value)
+    const namber2 = +(variavelNumero2.value)
     const soma = namber1 + namber2;
 
-    let Conta = document.getElementById("resultado-somar-valores")
-    Conta.innerHTML = `A soma entre ${namber1} e ${namber2} é igual a ${soma} <br/>`
+    const conta = document.getElementById("resultado-somar-valores")
+    conta.innerHTML = `A soma entre ${namber1} e ${namber2} é igual a ${soma} <br/>`
 }
 
 function calcular() {
