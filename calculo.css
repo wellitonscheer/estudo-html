@@ -1,0 +1,13 @@
+body {
+    color: white;
+    background: tomato;
+    font: normal 20pt Arial;
+}
+
+.hora {
+    font-weight: bold;
+}
+
+.dia-semana {
+    font-weight: bold;
+}
