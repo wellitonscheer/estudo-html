@@ -36,14 +36,33 @@ switch (dia.getDay()) {
 }
 
 function conta() {
-    const variavelNumero1 = window.document.getElementById("numero1")
-    const variavelNumero2 = window.document.getElementById("numero2")
-    const namber1 = Number(variavelNumero1.value)
-    const namber2 = +(variavelNumero2.value)
-    const soma = namber1 + namber2;
-
+    const variavelNumero1 = window.document.getElementById("numero1");
+    const variavelNumero2 = window.document.getElementById("numero2");
+    const operador = window.document.getElementById("operador");
+    const operacao = String(operador.value);
+    const namber1 = Number(variavelNumero1.value);
+    const namber2 = +(variavelNumero2.value);
+    let soma;
     const conta = document.getElementById("resultado-somar-valores")
-    conta.innerHTML = `A soma entre ${namber1} e ${namber2} é igual a ${soma} <br/>`
+    if(operacao === "*"){
+        soma = namber1 * namber2;
+        conta.innerHTML = `${namber1} vezes ${namber2} é igual a ${soma}<br/>`
+    }
+    else if(operacao === "/"){
+        soma = namber1 / namber2;
+        conta.innerHTML = `${namber1} dividido por ${namber2} é igual a ${soma}<br/>`
+    }
+    else if(operacao === "+"){
+        soma = namber1 + namber2;
+        conta.innerHTML = `${namber1} mais ${namber2} é igual a ${soma}<br/>`
+    }
+    else if(operacao === "-"){
+        soma = namber1 - namber2;
+        conta.innerHTML = `${namber1} menos ${namber2} é igual a ${soma}<br/>`
+    }
+    else{
+        conta.innerHTML = "Coloque um operador valido";
+    }
 }
 
 function calcular() {
