@@ -2,7 +2,7 @@ setInterval(() => {
     const spanHora = document.getElementById("hora");
     const dia = new Date();
     const hora = `${dia.getHours()}:${dia.getMinutes()}:${dia.getSeconds()}`;
-    spanHora.innerText = hora;    
+    spanHora.innerText = hora;
 }, 1000);
 
 const dia = new Date();
@@ -13,26 +13,43 @@ switch (dia.getDay()) {
         spanDiaSemana.innerHTML = 'Domingo';
         break
     case 1:
-        window.document.write(`<strong>Hoje é Segunda-Feira<br />${hora}</strong>`);
+        spanDiaSemana.innerHTML = "Segunda-Feira";
         break
     case 2:
-        window.document.write(`<strong>Hoje é Terça-Feira<br />${hora}</strong>`);
+        spanDiaSemana.innerHTML = "Terça-feira";
         break
     case 3:
         spanDiaSemana.innerHTML = 'Quarta-feira';
         break
     case 4:
-        window.document.write(`<strong>Hoje é Quinta-Feira<br />${hora}</strong>`);
+        spanDiaSemana.innerHTML = "Quinta-Feira";
         break
     case 5:
-        window.document.write(`<strong>Hoje é Sexta-Feira<br />${hora}</strong>`);
+        spanDiaSemana.innerHTML = "Sexta-Feira";
         break
     case 6:
-        window.document.write(`<strong>Hoje é Sábado<br />${hora}</strong>`);
+        spanDiaSemana.innerHTML = `Sábado`;
         break
     default:
-        window.document.write("<strong>[ERRO] Dia invalido</strong>");
+        spanDiaSemana.innerHTML = "[ERRO] Dia invalido";
         break
+}
+function load(){
+    const data = new Date();
+    const hora = data.getHours();
+    let img = window.document.getElementById("jpg");
+    if(hora >= 0 && hora < 12){
+        img.src = 'manha.jpg';
+        document.body.style.background = "#fed8b1";
+    }
+    else if(hora >= 12 && hora < 18){
+        img.src = 'tarde.jpg';
+        document.body.style.background = "#ff9211";
+    }
+    else{
+        img.src = 'noite.jpg'
+        document.body.style.background = "#363243";
+    }
 }
 
 function conta() {
@@ -43,24 +60,24 @@ function conta() {
     const namber1 = Number(variavelNumero1.value);
     const namber2 = +(variavelNumero2.value);
     let soma;
-    const conta = document.getElementById("resultado-somar-valores")
-    if(operacao === "*"){
+    const conta = document.getElementById("resultado-somar-valores");
+    if (operacao === "*") {
         soma = namber1 * namber2;
         conta.innerHTML = `${namber1} vezes ${namber2} é igual a ${soma}<br/>`
     }
-    else if(operacao === "/"){
+    else if (operacao === "/") {
         soma = namber1 / namber2;
         conta.innerHTML = `${namber1} dividido por ${namber2} é igual a ${soma}<br/>`
     }
-    else if(operacao === "+"){
+    else if (operacao === "+") {
         soma = namber1 + namber2;
         conta.innerHTML = `${namber1} mais ${namber2} é igual a ${soma}<br/>`
     }
-    else if(operacao === "-"){
+    else if (operacao === "-") {
         soma = namber1 - namber2;
         conta.innerHTML = `${namber1} menos ${namber2} é igual a ${soma}<br/>`
     }
-    else{
+    else {
         conta.innerHTML = "Coloque um operador valido";
     }
 }

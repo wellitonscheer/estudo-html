@@ -10,10 +10,19 @@
     <link rel="stylesheet" href="calculo.css" />
 </head>
 
-<body>
-    <p>Dia semana: <span id="dia-semana" class="dia-semana"></span></p>
-    <p>Horário: <span id="hora" class="hora"></span></p>
-
+<body onload="load()">
+    <header>
+        <h1>Hora do dia</h1>
+    </header>
+    <section>
+        <div>
+            <p>Dia semana: <span id="dia-semana" class="dia-semana"></span></p>
+            <p>Horário: <span id="hora" class="hora"></span></p>
+        </div>
+        <div id = "foto">
+            <img id = "jpg" src="" alt="foto do dia">
+        </div>
+    </section>
     <hr />
 
     <h1>Fazendo contas</h1>
@@ -22,10 +31,10 @@
         * = Multiplicação <br />
         / = Divisão<br />
         - = Subtração<br />
-        + = Adição  <p>1º Numero, Operador, 2º Numero</p>
+        + = Adição <p>1º Numero, Operador, 2º Numero</p>
     </div>
     <input type="number" name="numero1" id="numero1" />
-    <input type="string" name="operador" id="operador"/>
+    <input type="string" name="operador" id="operador" />
     <input type="number" name="numero2" id="numero2" />
     <input type="button" value="Calcular" onclick="conta()" />
     <div id="resultado-somar-valores"></div>
@@ -39,6 +48,13 @@
     <div id="resultado-checar-multa"></div>
 
     <script src="calculo.js"></script>
+
+    <hr />
+
+
+    <footer>
+        <p>&copy; Welliton Scheer</p>
+    </footer>
 </body>
 
 </html>
