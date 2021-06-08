@@ -95,3 +95,59 @@ function calcular() {
         resultado.innerHTML = (`Você ultrapassou o limite de velocidade!<br /><strong>VOCÊ FOI MULTADO</strong>`);
     }
 }
+function verificar(){
+    const da = new Date();
+    const an = da.getFullYear();
+    let anopes = window.document.getElementById("anoNas");
+    let cheida = document.getElementById("cheida");
+    if(anopes.value.length == 0 || Number(anopes.value) > an){
+        cheida.innerHTML = "Verifique os dados e tente novamente";
+    }
+    else{
+        let sexo = document.getElementsByName("radsex");
+        let idade = an - Number(anopes.value);
+        let genero = '';
+        let fotoP = window.document.getElementById("fotoP")
+        if(sexo[0].checked){
+            genero = 'Homem';
+            if(idade >= 0 && idade <=15){
+                //criança
+                fotoP.src = "criancaH.jpg";
+            }
+            else if(idade > 10 && idade <= 25){
+                //jovem
+                fotoP.src = "jovemH.jpg";
+            }
+            else if(idade > 25 && idade <= 50){
+                //adulto
+                fotoP.src = "adultoH.jpg";
+            }
+            else{
+                //velho
+                fotoP.src = "velhoH.jpg";
+            }
+            //fotoP.src = "criancaH.jpg";
+        }
+        else if(sexo[1].checked){
+            genero = 'Mulher';
+            if(idade >= 0 && idade <=15){
+                //criança
+                fotoP.src = "criancaM.jpg";
+            }
+            else if(idade > 10 && idade <= 25){
+                //jovem
+                fotoP.src = "jovemM.jpg";
+            }
+            else if(idade > 25 && idade <= 50){
+                //adulto
+                fotoP.src = "adultoM.jpg";
+            }
+            else{
+                //velho
+                fotoP.src = "velhaM.jpg";
+            }
+        }
+        cheida.innerHTML = `${genero} com ${idade} anos`;
+    }
+
+}

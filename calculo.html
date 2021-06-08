@@ -11,7 +11,46 @@
 </head>
 
 <body onload="load()">
-    <header>
+    <div class="row">
+        <div class="column">
+            <header>
+                <h1>Hora do dia</h1>
+            </header>
+            <section>
+                <div>
+                    <p>Dia semana: <span id="dia-semana" class="dia-semana"></span></p>
+                    <p>Horário: <span id="hora" class="hora"></span></p>
+                </div>
+                <div id = "foto">
+                    <img id = "jpg" src="" alt="foto do dia">
+                </div>
+            </section>
+        </div>
+        <div class="column">
+            <header>
+                <strong><h1>Verificador de idade</h1></strong>
+            </header>
+            <section>
+                <div>
+                    <p>Ano de nascimento:
+                        <input type="number" name="anoNas" id="anoNas" min = "0">
+                    </p>
+                    <p>Sexo:
+                        <input type="radio" name="radsex" id="mas" checked>
+                        <label for="mas">Masculino</label>
+                        <input type="radio" name="radsex" id="fem">
+                        <label for="fem">Feminino</label>
+                    </p>
+                    <p>
+                        <input type="button" value="Verificar" onclick="verificar()">
+                    </p>
+                </div>
+                <div id = "cheida"></div>
+                <img id = "fotoP" src="" alt="">
+            </section>
+        </div>
+      </div>
+    <!--<header>
         <h1>Hora do dia</h1>
     </header>
     <section>
@@ -22,7 +61,7 @@
         <div id = "foto">
             <img id = "jpg" src="" alt="foto do dia">
         </div>
-    </section>
+    </section>-->
     <hr />
 
     <h1>Fazendo contas</h1>
